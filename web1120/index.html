@@ -77,7 +77,7 @@
                 </div>
                 <div id="forexpert">
                     <div id="forexpertbox">
-                    <h3>キャンプ・旅行経験者の方へ</h3><!-- 背景img --><!-- translateでホバーしたら下の文字がでるやつにする -->
+                    <h3>キャンプ・旅行経験者の方へ</h3><!-- 背景img --><!-- js覚えたらclick時動作 -->
                     <p>出先の帰路についたとき日常に戻る名残惜しさを感じます<br>それと同時に次の『非日常』を求める感覚を覚えている筈です<br>思いは日常での原動力となり向き合う力をくれるでしょう<br>このサイトが鮮やかな<span>『非日常』</span>のお裾分けを<br>または次なる目的地の一助となれば幸いです</p>
                     </div>
                 </div>
@@ -85,22 +85,38 @@
         </section>
 
         <section id="content3">
-            <div>
-                <ol id="nav"><!-- flexbox化　横配置 -->
-                    <li><a href="#">キャンプ</a></li>
-                    <li><a href="#">旅行</a></li>
-                    <li><a href="#"></a></li>
-                </ol>
+            <div id="leftsidediv">
+                <div id="leftupper">
+                    <div id="camptoggle" class="toggleIcon borderNow"><img src="img/bonfire2.png" alt="キャンプ記事表示"></div>
+                    <div id="traveltoggle" class="toggleIcon"><img src="img/suitcas2e.png" alt="旅行記事表示"></div>
+                    <script>
+                        var campIcon = document.getElementById("camptoggle");
+                        var travelIcon = document.getElementById("traveltoggle");
+                    
+                        campIcon.addEventListener("click", toggleBorderOne);
+                        travelIcon.addEventListener("click", toggleBorderTwo);
+                    
+                        function toggleBorderOne() {
+                            if (!campIcon.classList.contains("borderNow")) {
+                                travelIcon.classList.remove("borderNow");
+                                campIcon.classList.add("borderNow");
+                            }
+                        }
+                    
+                        function toggleBorderTwo() {
+                            if (!travelIcon.classList.contains("borderNow")) {
+                                campIcon.classList.remove("borderNow");
+                                travelIcon.classList.add("borderNow");
+                            }
+                        }
+                    </script>
+                </div>
+                <div id="leftmiddle"><p>キャンプ記事一覧</p></div>
+                <div id="leftbottom"></div>
             </div>
-            <h2>あああ</h2><!-- いるかどうか検討 -->
-            <div>
-                <a href="#"><img src="img/IMGP0117.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0168.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0288.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0308.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0314.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0462.JPG" width="400" height="400" alt="pic"></a>
-                <a href="#"><img src="img/IMGP0774.JPG" width="400" height="400" alt="pic">もっと見る</a>
+            <div id="rightsidediv">
+                <div id="imageviewer"></div>
+                <div id="textbox"></div>
             </div>
         </section>
 
@@ -137,11 +153,13 @@
     <script src="js/8-2.js"></script>
     <script src="js/8-12.js"></script>
     <!-- googlemapapi取得, hideAPIkey -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=HERE-IS-THE-KEY&callback=console.debug&libraries=maps,marker&v=3">
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=console.debug&libraries=maps,marker&v=3">
     </script>
     <!-- googlemapのやし -->
     <script src="js/map.js"></script>
     <script defer src="js/extendmap.js"></script>
 </body>
+
+</html>
 
 </html>
