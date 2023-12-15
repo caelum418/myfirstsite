@@ -297,9 +297,63 @@ h1 {
 #content3 {
     height: 100vh;
     background: #7968a8;
+    display: flex;
 }
 
+#leftsidediv {
+    width: 18%;
+    background-color: red;
+}
 
+#leftupper {
+    height: 20%;
+    background-color: rgb(123, 181, 231);
+    display: flex;
+    justify-content: space-between;
+}
+#camptoggle, #traveltoggle {
+    padding: 10px 5px 0px 5px;
+    width: 50%;
+    height: 100%;
+}
+.borderNow {
+    border: 2px solid #000;
+}
+#leftupper img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#leftmiddle {
+    height: 14%;
+    background-color: yellow;
+}
+
+#leftbottom {
+    height: 66%;
+    background-color: blueviolet;
+}
+
+#rightsidediv {
+    width: 81%;
+    background-color: orange;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#imageviewer {
+    width: 66%;
+    height: 100%;
+    background-color: forestgreen;
+}
+
+#textbox {
+    width: 33%;
+    height: 100%;
+    background-color: indianred;
+}
 
 #content4 {
     height: 100vh;
